@@ -52,7 +52,7 @@ local function runCleanupFunctions()
     removeUnownedWeapons()
 end
 
-timer.Create( "cfc_Autoclean", GetConVar( "cfc_autoclean" ):GetInt(), 0, runCleanupFunctions )
+timer.Create( "CFC_AutoClean", GetConVar( "cfc_autoclean" ):GetInt(), 0, runCleanupFunctions )
 
 hook.Remove( "APG_lagDetected", "CFC_CleanOnLag" )
 hook.Add( "APG_lagDetected", "CFC_CleanOnLag", runCleanupFunctions )
