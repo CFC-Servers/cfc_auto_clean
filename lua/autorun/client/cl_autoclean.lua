@@ -1,5 +1,4 @@
 local isAllowedCommand = {
-    ["stopsound"] = true,
     ["r_cleardecals"] = true
 }
 
