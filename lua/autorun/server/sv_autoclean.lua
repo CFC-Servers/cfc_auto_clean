@@ -95,7 +95,10 @@ local function removeUnownedWeapons()
 
     if removedCount == 0 then return end
 
-    local message = "Removed " .. tostring( removedCount ) .. " objects."
+    local message = "Removed " .. tostring( removedCount ) .. " object"
+
+    if removedCount > 1 then message = message .. "s" end
+
     notifyPlayers( message )
 end
 
