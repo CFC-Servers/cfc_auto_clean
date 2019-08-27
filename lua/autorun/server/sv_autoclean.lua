@@ -16,7 +16,7 @@ local function notifyPlayers( message, includePrefix )
     if includePrefix ~= false then
         printMsg = prefix .. message
     end
-    
+
     print( printMsg )
 
     for _, ply in pairs( player.GetHumans() ) do
@@ -86,13 +86,15 @@ local function removeUnownedWeapons()
         if not IsValid( entity ) then continue end
 
         local isUnownedWeapon = entity:IsWeapon() and not IsValid( entity.Owner )
-        
+
         if isUnownedWeapon then
             removedCount = removedCount + 1
             entity:Remove()
         end
     end
-    
+
+    if removedCount == 0 then return end
+
     local message = "Removed " .. tostring( removedCount ) .. " objects."
     notifyPlayers( message )
 end
