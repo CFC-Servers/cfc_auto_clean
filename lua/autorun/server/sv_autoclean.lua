@@ -43,7 +43,7 @@ local clearingServerMessages = {
     "[CFC - Antiminge] Removing users...",
     "[CFC - Criminal] Stealing copies of phatmania...",
     "[CFC - Raincore] Soaking your builds...",
-    "[CFC - Minecraftcore] Removing legokidlogans minecraft e2...",
+    "[CFC - Minecraftcore] Removing legokidlogan's minecraft E2...",
     "[CFC - Anticheat] Removing RadioJackal...",
     "[CFC - Antispam] Removing chat...",
     "[CFC - Antimicspam] Removing voicechat...",
