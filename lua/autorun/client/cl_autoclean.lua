@@ -15,4 +15,4 @@ net.Receive( "CFC_AutoClean_RunCommand", function()
         notifyPlayer( "The server is running '" .. command .. "' on your client.." )
         RunConsoleCommand( command )
     end
-end)
+end )
