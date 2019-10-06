@@ -8,7 +8,7 @@ local function notifyPlayer( notification )
     print( message )
 end
 
-net.Receive( "CFC_AutoClean_RunCommand", function() 
+net.Receive( "CFC_AutoClean_RunCommand", function()
     local command = net.ReadString()
 
     if isAllowedCommand[command] then
