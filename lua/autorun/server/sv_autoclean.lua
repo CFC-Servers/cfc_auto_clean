@@ -83,13 +83,13 @@ local function removeUnownedWeapons()
     local removedCount = 0
 
     for _, entity in pairs( ents.GetAll() ) do
-        if not IsValid( entity ) then continue end
+        if IsValid( entity ) then
+            local isUnownedWeapon = entity:IsWeapon() and not IsValid( entity.Owner )
 
-        local isUnownedWeapon = entity:IsWeapon() and not IsValid( entity.Owner )
-
-        if isUnownedWeapon then
-            removedCount = removedCount + 1
-            entity:Remove()
+            if isUnownedWeapon then
+                removedCount = removedCount + 1
+                entity:Remove()
+            end
         end
     end
 
