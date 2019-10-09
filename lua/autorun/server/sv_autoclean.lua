@@ -111,3 +111,5 @@ timer.Create( "CFC_AutoClean", GetConVar( "cfc_autoclean" ):GetInt(), 0, runClea
 
 hook.Remove( "APG_lagDetected", "CFC_CleanOnLag" )
 hook.Add( "APG_lagDetected", "CFC_CleanOnLag", runCleanupFunctions )
+
+-- Practical change so I can do a pull request
