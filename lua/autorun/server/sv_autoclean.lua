@@ -4,21 +4,6 @@ local ConVarFlags = {FCVAR_ARCHIVE, FCVAR_NOTIFY}
 local DEFAULT_CLEAN_INTERVAL_IN_SECONDS = "500"
 CreateConVar( "cfc_autoclean", DEFAULT_CLEAN_INTERVAL_IN_SECONDS, ConVarFlags, "Autocleans the server based on seconds given" )
 
-local function notifyPlayers( message, includePrefix )
-    local prefix = "[CFC - AutoClean] "
-    local printMsg = message
-
-    if includePrefix ~= false then
-        printMsg = prefix .. message
-    end
-
-    print( printMsg )
-
-    for _, ply in pairs( player.GetHumans() ) do
-        ply:ChatPrint( printMsg )
-    end
-end
-
 local clearingServerMessages = {
     "[CFC - AutoClean] Scrubbing the ethernet...",
     "[CFC - AutoClean] Dusting the heatsinks...",
@@ -64,11 +49,8 @@ end
 
 local function runCleanupCommandsOnPlayers()
     net.Start( "CFC_RunAutoClean" )
+        net.WriteString( notificationMsg )
     net.Broadcast()
-
-    local notificationMsg = getClearingServerMessage()
-
-    notifyPlayers( notificationMsg, false )
 end
 
 local function removeUnownedWeapons()
