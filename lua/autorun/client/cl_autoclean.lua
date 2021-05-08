@@ -3,9 +3,9 @@ local cleanupCommands = {
 }
 
 net.Receive( "CFC_RunAutoClean", function()
-    message = net.ReadString()
+    local message = net.ReadString()
 
-    for _, command in pairs( cleanupCommands ) do
+    for _, command in ipairs( cleanupCommands ) do
         RunConsoleCommand( command )
     end
 
