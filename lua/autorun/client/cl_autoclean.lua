@@ -2,10 +2,14 @@ local cleanupCommands = {
     "r_cleardecals"
 }
 
-net.Receive( "CFC_RunAutoClean", function()
-    local message = net.ReadString()
+local cleanupCommandsCount = #cleanupCommands
 
-    for _, command in ipairs( cleanupCommands ) do
+net.Receive( "CFC_RunAutoClean", function()
+    local idx = net.ReadUInt( 8 )
+    local message = CFCAutoClean.clearingServerMessages[idx]
+
+    for i = 1, cleanupCommandsCount do
+        local command = cleanupCommands[i]
         RunConsoleCommand( command )
     end
 
