@@ -23,12 +23,12 @@ local function removeUnownedWeapons()
     for i = 1, entsCount do
         local ent = rawget( allEnts, i )
 
-        if IsValid( entity ) then
-            local isUnownedWeapon = entity:IsWeapon() and not IsValid( entity.Owner )
+        if IsValid( ent ) then
+            local isUnownedWeapon = ent:IsWeapon() and not IsValid( ent.Owner )
 
             if isUnownedWeapon then
                 removedCount = removedCount + 1
-                entity:Remove()
+                ent:Remove()
             end
         end
     end
