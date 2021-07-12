@@ -9,6 +9,3 @@ The server triggers cleanup commands at an interval in seconds set by the `cfc_a
 Cleanup commands include:
 - Removing unowned weapons
 - Clearing decals
-
-### Anti Prop Grief
-If APG is installed, the cleanup commands will also be triggered by APG's `APG_lagDetected` hook.
