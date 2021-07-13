@@ -7,11 +7,12 @@ local ConVarFlags = {FCVAR_ARCHIVE, FCVAR_NOTIFY}
 local DEFAULT_CLEAN_INTERVAL_IN_SECONDS = "500"
 local autocleanInterval = CreateConVar( "cfc_autoclean", DEFAULT_CLEAN_INTERVAL_IN_SECONDS, ConVarFlags, "Autocleans the server based on seconds given" )
 
-local function runCleanupCommandsOnPlayers()
-    local notificationMsg = getClearingServerMessage()
+local random = math.random
+local messagesCount = #CFCAutoClean.clearingServerMessages
 
+local function runCleanupCommandsOnPlayers()
     net.Start( "CFC_RunAutoClean" )
-        net.WriteString( notificationMsg )
+        net.WriteUInt( random( messagesCount ), 8 )
     net.Broadcast()
 end
 
