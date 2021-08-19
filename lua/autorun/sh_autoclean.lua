@@ -14,5 +14,7 @@ CFCAutoClean.clearingServerMessages = {
     "[CFC - AutoClean] Brushing teeth...",
     "[CFC - AutoClean] Cleaning behind the ears...",
     "[CFC - AutoClean] Vacuuming...",
-    "[CFC - AutoClean] Taking vitamins..."
+    "[CFC - AutoClean] Taking vitamins...",
+    "[CFC - AutoClean] Massaging the CPU...",
+    "[CFC - AutoClean] Overclocking the motherboard...",
 }

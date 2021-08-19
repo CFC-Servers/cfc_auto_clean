@@ -40,7 +40,7 @@ local function removeUnownedWeapons()
 
     if removedCount > 1 then message = message .. "s" end
 
-    notifyPlayers( message )
+    runCleanupCommandsOnPlayers( message )
 end
 
 local function runCleanupFunctions()
