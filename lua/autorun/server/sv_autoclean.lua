@@ -2,7 +2,6 @@ util.AddNetworkString( "CFC_RunAutoClean" )
 local rawget = rawget
 local IsValid = IsValid
 
-local messageCount = #CFCAutoClean.clearingServerMessages
 local ConVarFlags = {FCVAR_ARCHIVE, FCVAR_NOTIFY}
 local DEFAULT_CLEAN_INTERVAL_IN_SECONDS = "500"
 local autocleanInterval = CreateConVar( "cfc_autoclean", DEFAULT_CLEAN_INTERVAL_IN_SECONDS, ConVarFlags, "Autocleans the server based on seconds given" )

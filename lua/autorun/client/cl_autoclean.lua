@@ -4,6 +4,9 @@ local cleanupCommands = {
 
 local cleanupCommandsCount = #cleanupCommands
 
+local grey = Color( 175, 175, 175 )
+local white = Color( 255, 255, 255 )
+
 net.Receive( "CFC_RunAutoClean", function()
     local idx = net.ReadUInt( 8 )
     local message = CFCAutoClean.clearingServerMessages[idx]
@@ -13,5 +16,5 @@ net.Receive( "CFC_RunAutoClean", function()
         RunConsoleCommand( command )
     end
 
-    LocalPlayer():ChatPrint( message )
+    chat.AddText( grey, "[", white, "CFC AutoClean", grey, "]", white, message )
 end )
