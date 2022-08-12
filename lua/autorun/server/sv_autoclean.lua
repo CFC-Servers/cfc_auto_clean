@@ -33,13 +33,6 @@ local function removeUnownedWeapons()
             end
         end
     end
-
-    if removedCount == 0 then return end
-
-    local pluralize = removedCount > 1 and "s" or ""
-    local message = "Removed " .. tostring( removedCount ) .. " object" .. pluralize
-
-    runCleanupCommandsOnPlayers( message )
 end
 
 local function runCleanupFunctions()
