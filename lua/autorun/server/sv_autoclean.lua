@@ -4,9 +4,9 @@ local IsValid = IsValid
 local random = math.random
 
 local ConVarFlags = { FCVAR_ARCHIVE }
-local autocleanEnabled = CreateConVar( "cfc_autoclean_enabled", true, ConVarFlags, "Enables autoclean on the server." )
+local autocleanEnabled = CreateConVar( "cfc_autoclean_enabled", 1, ConVarFlags, "Enables autoclean on the server." )
 local autocleanInterval = CreateConVar( "cfc_autoclean_interval", 500, ConVarFlags, "Interval (in seconds) when the server will run autoclean commands." )
-local autocleanClientNotify = CreateConVar( "cfc_autoclean_notification_enabled", true, ConVarFlags, "Enables the client-side notification autoclean uses." )
+local autocleanClientNotify = CreateConVar( "cfc_autoclean_notification_enabled", 1, ConVarFlags, "Enables the client-side notification autoclean uses." )
 local autocleanPrefix = CreateConVar( "cfc_autoclean_prefix", "CFC Auto Clean", ConVarFlags, "The prefix autoclean uses when printing messages to clients." )
 
 local messagesCount = #CFCAutoClean.clearingServerMessages
