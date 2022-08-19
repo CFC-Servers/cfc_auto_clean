@@ -2,11 +2,12 @@ local cleanupCommands = {
     "r_cleardecals"
 }
 
-local grey = Color( 175, 175, 175 )
-local white = Color( 255, 255, 255 )
+local bracketColor = Color( 41, 41, 41 )
+local bracketTextColor = Color( 150, 150, 150 )
+local messageColor = Color( 225, 225, 225 )
 
 net.Receive( "CFC_RunAutoClean", function()
-    local shoudShowClientMessages = net.ReadBool()
+    local shouldShowClientMessages = net.ReadBool()
     local messagePrefix = net.ReadString()
     local messageIndex = net.ReadUInt( 5 )
     local message = CFCAutoClean.clearingServerMessages[messageIndex]
@@ -15,6 +16,6 @@ net.Receive( "CFC_RunAutoClean", function()
         RunConsoleCommand( command )
     end
 
-    if not shoudShowClientMessages then return end
-    chat.AddText( grey, "[", white, messagePrefix, grey, "] ", white, message )
+    if not shouldShowClientMessages then return end
+    chat.AddText( bracketColor, "[", bracketTextColor, messagePrefix, bracketColor, "] ", messageColor, message )
 end )
