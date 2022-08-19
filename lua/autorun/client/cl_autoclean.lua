@@ -2,19 +2,19 @@ local cleanupCommands = {
     "r_cleardecals"
 }
 
-local cleanupCommandsCount = #cleanupCommands
-
 local grey = Color( 175, 175, 175 )
 local white = Color( 255, 255, 255 )
 
 net.Receive( "CFC_RunAutoClean", function()
-    local idx = net.ReadUInt( 8 )
-    local message = CFCAutoClean.clearingServerMessages[idx]
+    local shoudShowClientMessages = net.ReadBool()
+    local messagePrefix = net.ReadString()
+    local messageIndex = net.ReadUInt( 5 )
+    local message = CFCAutoClean.clearingServerMessages[messageIndex]
 
-    for i = 1, cleanupCommandsCount do
-        local command = cleanupCommands[i]
+    for _, command in ipairs( cleanupCommands ) do
         RunConsoleCommand( command )
     end
 
-    chat.AddText( grey, "[", white, "CFC AutoClean", grey, "]", white, message )
+    if not shoudShowClientMessages then return end
+    chat.AddText( grey, "[", white, messagePrefix, grey, "] ", white, message )
 end )
