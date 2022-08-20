@@ -19,7 +19,7 @@ local messagesCount = #CFCAutoClean.clearingServerMessages
 local function runCleanupCommandsOnPlayers()
     net.Start( "CFC_RunAutoClean" )
         net.WriteBool( autocleanClientNotify:GetBool() )
-        net.WriteBool( autocleanPrefix:GetString() )
+        net.WriteString( autocleanPrefix:GetString() )
         net.WriteUInt( random( messagesCount ), 5 )
     net.Broadcast()
 end
