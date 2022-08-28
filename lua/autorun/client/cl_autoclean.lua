@@ -7,7 +7,7 @@ local messageColor = Color( 225, 225, 225 )
 
 net.Receive( "CFC_RunAutoClean", function()
     local shouldShowClientMessages = net.ReadBool()
-    local messagePrefix = net.ReadString()
+    net.ReadString()
     local messageIndex = net.ReadUInt( 5 )
     local message = CFCAutoClean.clearingServerMessages[messageIndex]
 
