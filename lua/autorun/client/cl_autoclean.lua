@@ -2,8 +2,7 @@ local cleanupCommands = {
     "r_cleardecals"
 }
 
-local bracketColor = Color( 41, 41, 41 )
-local bracketTextColor = Color( 150, 150, 150 )
+local prefixColor = Color( 41, 41, 41 )
 local messageColor = Color( 225, 225, 225 )
 
 net.Receive( "CFC_RunAutoClean", function()
@@ -17,5 +16,5 @@ net.Receive( "CFC_RunAutoClean", function()
     end
 
     if not shouldShowClientMessages then return end
-    chat.AddText( bracketColor, "• ", messageColor, message )
+    chat.AddText( prefixColor, "• ", messageColor, message )
 end )
