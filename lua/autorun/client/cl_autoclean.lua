@@ -17,5 +17,5 @@ net.Receive( "CFC_RunAutoClean", function()
     end
 
     if not shouldShowClientMessages then return end
-    chat.AddText( bracketColor, "[", bracketTextColor, messagePrefix, bracketColor, "] ", messageColor, message )
+    chat.AddText( bracketColor, "• ", messageColor, message )
 end )
