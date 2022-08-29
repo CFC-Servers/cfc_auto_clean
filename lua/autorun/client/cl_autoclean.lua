@@ -3,7 +3,7 @@ local cleanupCommands = {
 }
 
 local prefixColor = Color( 41, 41, 41 )
-local messageColor = Color( 225, 225, 225 )
+local messageColor = Color( 190, 190, 190 )
 
 net.Receive( "CFC_RunAutoClean", function()
     local shouldShowClientMessages = net.ReadBool()
