@@ -15,3 +15,6 @@ Cleanup commands include:
 - `cfc_autoclean_interval (number in seconds)` - Sets how regularly the commands are called. default: 500
 - `cfc_autoclean_notification_enabled (0 or 1)` - Enables/disables the client-side prints. default: 1
 - `cfc_autoclean_prefix (any string)` - Sets the prefix for the client-side prints. default: "CFC AutoClean"
+
+### Hooks:
+- `CFC_AutoClean_DisallowWeaponRemoval( wep )` - Return true to prevent the weapon from being removed. The weapon will always have no owner.
