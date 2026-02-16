@@ -35,7 +35,7 @@ local function removeUnownedWeapons()
         if IsValid( ent ) then
             local isUnownedWeapon = ent:IsWeapon() and not IsValid( ent.Owner )
 
-            if isUnownedWeapon then
+            if isUnownedWeapon and hook.Run( "CFC_AutoClean_DisallowWeaponRemoval", ent ) ~= true then
                 removedCount = removedCount + 1
                 ent:Remove()
             end
